@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e441090-220a-4242-8a54-136a39ee5a98" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/EventsBus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Executor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/IPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/ISubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/stubs/SubscriberStub.java" afterDir="false" />
+    <list default="true" id="5e441090-220a-4242-8a54-136a39ee5a98" name="Changes" comment="test successful creation of cell and illegal coordinate exception">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/interfaces/ISubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/ISubscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/stubs/SubscriberStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/stubs/SubscriberStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ExecutorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ExecutorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +40,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/madhurima.poddar_ftc/IdeaProjects/gameOfLife2/src/main/java/org/example/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.CellTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "/Users/madhurima.poddar_ftc/IdeaProjects/gameOfLife2/src/main/java/org/example/Main.java"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.GridTest">
+    <configuration name="CellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gameOfLife2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GridTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gameOfLife2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GridTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GridTest" />
+        <item itemvalue="JUnit.CellTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,7 +97,29 @@
       <option name="presentableId" value="Default" />
       <updated>1706706809132</updated>
     </task>
+    <task id="LOCAL-00001" summary="Created a Events bus and a stub to test it, wrote first test for executor">
+      <option name="closed" value="true" />
+      <created>1706712109397</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706712109397</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test successful creation of cell and illegal coordinate exception">
+      <option name="closed" value="true" />
+      <created>1706712162784</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706712162784</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created a Events bus and a stub to test it, wrote first test for executor" />
+    <MESSAGE value="test successful creation of cell and illegal coordinate exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="test successful creation of cell and illegal coordinate exception" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

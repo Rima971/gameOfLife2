@@ -8,7 +8,7 @@ public class SubscriberStub implements ISubscriber {
     private Object payload;
     public SubscriberStub(){
         for (Event event: Event.values()){
-            this.subcribe(event, this);
+            this.subscribe(event, this);
         }
     }
 

@@ -1,3 +1,4 @@
+import org.example.Cell;
 import org.junit.Test;
 
 import java.security.InvalidParameterException;
