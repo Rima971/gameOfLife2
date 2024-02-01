@@ -1,7 +1,7 @@
-package org.example.interfaces;
+package org.game.interfaces;
 
-import org.example.EventsBus;
-import org.example.enums.Event;
+import org.game.EventsBus;
+import org.game.enums.Event;
 
 public interface ISubscriber {
     default void subscribe(Event event, ISubscriber subscriber){

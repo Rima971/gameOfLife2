@@ -1,7 +1,7 @@
-package org.example.stubs;
+package org.game.stubs;
 
-import org.example.enums.Event;
-import org.example.interfaces.ISubscriber;
+import org.game.enums.Event;
+import org.game.interfaces.ISubscriber;
 
 public class SubscriberStub implements ISubscriber {
     private Event event;
@@ -14,11 +14,12 @@ public class SubscriberStub implements ISubscriber {
 
     @Override
     public void onEvent(Event event, Object o) {
+        System.out.println(event + " " + o);
         this.event = event;
         this.payload = o;
     }
 
     public boolean check(Event event, Object o){
-        return event == this.event && o == this.payload;
+        return event == this.event && o.equals(this.payload);
     }
 }
