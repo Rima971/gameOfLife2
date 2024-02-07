@@ -21,6 +21,7 @@ public class Cell extends GridItem {
                 this.update();
         }
     }
+
     private void update(){
         if (this.getSurroundingCellsCount()<2 || this.getSurroundingCellsCount()>3){
             this.destroy();

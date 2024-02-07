@@ -13,8 +13,19 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class GridItemTest {
-    private final PublisherStub publisherStub = new PublisherStub();
-    private final SubscriberStub subscriberStub = new SubscriberStub();
+    private final class GridItemChild extends GridItem {
+        public GridItemChild(int row, int column){
+            super(row, column);
+        }
+
+        public int getNeighbourCellCount(){
+            return super.getSurroundingCellsCount();
+        }
+
+        public void resetNeighbouringCellCount(){
+            super.resetSurroundingCellCount();
+        }
+    }
     @Test
     public void successfullyInstantiateGridItem(){
         assertDoesNotThrow(()->new GridItem(2,3));
@@ -32,17 +43,17 @@ public class GridItemTest {
         cells.add(new Cell(2,4));
         cells.add(new Cell(4,4));
         cells.add(new Cell(1,4));
-        GridItem item = new Cell(3,4);
+        GridItemChild item = new GridItemChild(3,4);
         cells.forEach(cell->cell.publish(Event.CELL_STATE, cell));
 
-        assertEquals(2, item.getSurroundingCellsCount());
+        assertEquals(2, item.getNeighbourCellCount());
 
-        item.resetSurroundingCellCount();
+        item.resetNeighbouringCellCount();
         cells.add(new Cell(2,5));
         cells.add(new Cell(2,6));
         cells.add(new Cell(2,3));
         cells.forEach(cell->cell.publish(Event.CELL_STATE, cell));
 
-        assertEquals(4, item.getSurroundingCellsCount());
+        assertEquals(4, item.getNeighbourCellCount());
     }
 }

@@ -18,7 +18,7 @@ public class GridItem implements IPublisher, ISubscriber {
 
     @Override
     public void onEvent(Event event, Object o) {
-        if (o == null || o.getClass() != this.getClass()) return;
+        if (!(o instanceof GridItem)) return;
         this.checkForNeighbours((GridItem) o);
     }
 
@@ -27,13 +27,13 @@ public class GridItem implements IPublisher, ISubscriber {
         if ((Math.abs(item.row-this.row) == 1 || Math.abs(item.row-this.row) == 0) && (Math.abs(item.column-this.column) == 1 || Math.abs(item.column-this.column) == 0)){
             this.surroundingCellsCount++;
         }
-    };
+    }
 
-    public int getSurroundingCellsCount(){
+    protected int getSurroundingCellsCount(){
         return this.surroundingCellsCount;
     }
 
-    public void resetSurroundingCellCount(){
+    protected void resetSurroundingCellCount(){
         this.surroundingCellsCount = 0;
     }
 

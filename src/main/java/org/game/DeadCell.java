@@ -3,8 +3,8 @@ package org.game;
 import org.game.enums.Event;
 import org.game.enums.Symbol;
 
-public class Space extends GridItem {
-    public Space(int row, int column) {
+public class DeadCell extends GridItem {
+    public DeadCell(int row, int column) {
         super(row, column);
         this.subscribe(Event.UPDATE_STATE, this);
     }

@@ -4,30 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e441090-220a-4242-8a54-136a39ee5a98" name="Changes" comment="test a grid item doesn't accept invalid parameters, and can correctly count neighbouring cells on receiving cell state event">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/EventsBus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/GameRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/Space.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/enums/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/enums/Symbol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/stubs/PublisherStub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/GameRunnerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SpaceTest.java" afterDir="false" />
+    <list default="true" id="5e441090-220a-4242-8a54-136a39ee5a98" name="Changes" comment="worked on IDE warnings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EventsBus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Executor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Grid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/Event.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/interfaces/IPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/interfaces/IPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/interfaces/ISubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/interfaces/ISubscriber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/stubs/SubscriberStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/stubs/SubscriberStub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ExecutorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/GridItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/GridItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Space.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/DeadCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GridItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GridItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SpaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeadCellTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +45,10 @@
     "JUnit.CellTest.executor": "Run",
     "JUnit.CellTest.publishesItsStateOnReceivingBroadcastStateEvent.executor": "Run",
     "JUnit.CellTest.updatesItsStateOnReceivingUpdateStateEvent.executor": "Run",
+    "JUnit.DeadCellTest.dispatchesProduceEventOnReceivingUpdateStateEvent.executor": "Run",
+    "JUnit.DeadCellTest.executor": "Run",
     "JUnit.ExecutorTest.periodicallySendsEventsOnRunning.executor": "Run",
+    "JUnit.GameRunnerTest.executor": "Run",
     "JUnit.GridItemTest.correctlyCountsNeighbours.executor": "Run",
     "JUnit.GridItemTest.executor": "Run",
     "JUnit.GridTest.executor": "Run",
@@ -82,20 +69,30 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SpaceTest.dispatchesProduceEventOnReceivingUpdateStateEvent">
-    <configuration name="CellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GridItemTest.correctlyCountsNeighbours">
+    <configuration name="DeadCellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gameOfLife2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="MAIN_CLASS_NAME" value="DeadCellTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GridItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DeadCellTest.dispatchesProduceEventOnReceivingUpdateStateEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gameOfLife2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GridItemTest" />
+      <option name="MAIN_CLASS_NAME" value="DeadCellTest" />
+      <option name="METHOD_NAME" value="dispatchesProduceEventOnReceivingUpdateStateEvent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameRunnerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gameOfLife2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameRunnerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,32 +108,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpaceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GridTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gameOfLife2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SpaceTest" />
+      <option name="MAIN_CLASS_NAME" value="GridTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpaceTest.dispatchesProduceEventOnReceivingUpdateStateEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gameOfLife2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SpaceTest" />
-      <option name="METHOD_NAME" value="dispatchesProduceEventOnReceivingUpdateStateEvent" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SpaceTest.dispatchesProduceEventOnReceivingUpdateStateEvent" />
-        <item itemvalue="JUnit.SpaceTest" />
         <item itemvalue="JUnit.GridItemTest.correctlyCountsNeighbours" />
-        <item itemvalue="JUnit.GridItemTest" />
-        <item itemvalue="JUnit.CellTest" />
+        <item itemvalue="JUnit.DeadCellTest.dispatchesProduceEventOnReceivingUpdateStateEvent" />
+        <item itemvalue="JUnit.DeadCellTest" />
+        <item itemvalue="JUnit.GameRunnerTest" />
+        <item itemvalue="JUnit.GridTest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +183,79 @@
       <option name="project" value="LOCAL" />
       <updated>1706768978374</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactored the name of executor class to game runner">
+      <option name="closed" value="true" />
+      <created>1706820004752</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820004752</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changed package name">
+      <option name="closed" value="true" />
+      <created>1706820050382</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820050382</updated>
+    </task>
+    <task id="LOCAL-00008" summary="created stubs for testing publisher and subscriber behaviour">
+      <option name="closed" value="true" />
+      <created>1706820102383</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820102383</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added tests to check response of cells to events">
+      <option name="closed" value="true" />
+      <created>1706820177800</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820177800</updated>
+    </task>
+    <task id="LOCAL-00010" summary="modified package name">
+      <option name="closed" value="true" />
+      <created>1706820222921</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820222921</updated>
+    </task>
+    <task id="LOCAL-00011" summary="implemented eventbus">
+      <option name="closed" value="true" />
+      <created>1706820252544</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820252544</updated>
+    </task>
+    <task id="LOCAL-00012" summary="created a variant of grid item called space">
+      <option name="closed" value="true" />
+      <created>1706820285580</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820285580</updated>
+    </task>
+    <task id="LOCAL-00013" summary="created enum for output representation of cells and spaces">
+      <option name="closed" value="true" />
+      <created>1706820325108</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820325108</updated>
+    </task>
+    <task id="LOCAL-00014" summary="worked on IDE warnings">
+      <option name="closed" value="true" />
+      <created>1706820761677</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1706820761677</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,7 +275,16 @@
     <MESSAGE value="test successful creation of grid and invalid parameters exception" />
     <MESSAGE value="test grid takes right seeding percentage and populates grid with right number of cells" />
     <MESSAGE value="test a grid item doesn't accept invalid parameters, and can correctly count neighbouring cells on receiving cell state event" />
-    <option name="LAST_COMMIT_MESSAGE" value="test a grid item doesn't accept invalid parameters, and can correctly count neighbouring cells on receiving cell state event" />
+    <MESSAGE value="refactored the name of executor class to game runner" />
+    <MESSAGE value="changed package name" />
+    <MESSAGE value="created stubs for testing publisher and subscriber behaviour" />
+    <MESSAGE value="added tests to check response of cells to events" />
+    <MESSAGE value="modified package name" />
+    <MESSAGE value="implemented eventbus" />
+    <MESSAGE value="created a variant of grid item called space" />
+    <MESSAGE value="created enum for output representation of cells and spaces" />
+    <MESSAGE value="worked on IDE warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="worked on IDE warnings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -238,7 +306,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/GameRunnerTest.java</url>
           <line>8</line>
-          <properties class="GameRunnerTest" method="periodicallySendsEventsOnRunning">
+          <properties class="GameRunnerTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
