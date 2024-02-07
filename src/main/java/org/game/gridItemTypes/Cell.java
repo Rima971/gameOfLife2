@@ -1,5 +1,6 @@
-package org.game;
+package org.game.gridItemTypes;
 
+import org.game.GridItem;
 import org.game.enums.Event;
 import org.game.enums.Symbol;
 

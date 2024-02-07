@@ -1,10 +1,11 @@
-package org.game;
+package org.game.gridItemTypes;
 
+import org.game.GridItem;
 import org.game.enums.Event;
 import org.game.enums.Symbol;
 
-public class DeadCell extends GridItem {
-    public DeadCell(int row, int column) {
+public class Void extends GridItem {
+    public Void(int row, int column) {
         super(row, column);
         this.subscribe(Event.UPDATE_STATE, this);
     }
@@ -15,6 +16,7 @@ public class DeadCell extends GridItem {
         this.update();
     }
     private void update(){
+        System.out.println("in update void: "+this.getSurroundingCellsCount());
         if (this.getSurroundingCellsCount()==3){
             this.produce();
         }

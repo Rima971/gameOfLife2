@@ -1,9 +1,11 @@
 package org.game;
 
 import org.game.enums.Event;
+import org.game.exceptions.GridNonPositiveParameters;
+import org.game.exceptions.GridOutOfRangeSeedingPercentage;
+import org.game.gridItemTypes.Cell;
+import org.game.gridItemTypes.Void;
 import org.game.interfaces.ISubscriber;
-
-import java.security.InvalidParameterException;
 
 public class Grid implements ISubscriber {
     private final int rows, columns, initiallyRequiredCellsCount;
@@ -12,9 +14,9 @@ public class Grid implements ISubscriber {
 
     public Grid(int rows, int columns, double seedingPercentage) {
         if (rows <= 0 || columns <= 0 || seedingPercentage <= 0)
-            throw new InvalidParameterException("A grid cannot be created with a non-positive row, column or seedingPercentage");
+            throw new GridNonPositiveParameters();
         if (seedingPercentage >= 1)
-            throw new InvalidParameterException("A grid cannot be created with a seedingPercentage beyond the range of 0-1");
+            throw new GridOutOfRangeSeedingPercentage();
         this.rows = rows;
         this.columns = columns;
         this.initiallyRequiredCellsCount = (int) Math.round(seedingPercentage * rows * columns);
@@ -26,7 +28,7 @@ public class Grid implements ISubscriber {
     private void initialize() {
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.columns; j++) {
-                this.grid[i][j] = new DeadCell(i, j);
+                this.grid[i][j] = new Void(i, j);
             }
         }
         this.populateCellsRandomly();
@@ -61,7 +63,7 @@ public class Grid implements ISubscriber {
         int column = Integer.parseInt(coordinates[1]);
         switch (event) {
             case Event.CELL_DESTROY:
-                this.grid[row][column] = new DeadCell(row, column);
+                this.grid[row][column] = new Void(row, column);
                 this.cellsCount--;
             case Event.CELL_PRODUCE:
                 this.grid[row][column] = new Cell(row, column);
