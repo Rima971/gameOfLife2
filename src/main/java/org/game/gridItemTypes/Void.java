@@ -13,10 +13,11 @@ public class Void extends GridItem {
     @Override
     public void onEvent(Event event, Object o) {
         super.onEvent(event, o);
-        this.update();
+        switch (event){
+            case Event.UPDATE_STATE -> this.update();
+        }
     }
     private void update(){
-        System.out.println("in update void: "+this.getSurroundingCellsCount());
         if (this.getSurroundingCellsCount()==3){
             this.produce();
         }

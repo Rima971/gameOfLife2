@@ -1,8 +1,6 @@
-import org.game.Cell;
+import org.game.gridItemTypes.Cell;
 import org.game.GridItem;
 import org.game.enums.Event;
-import org.game.stubs.PublisherStub;
-import org.game.stubs.SubscriberStub;
 import org.junit.Test;
 
 import java.security.InvalidParameterException;
@@ -28,14 +26,14 @@ public class GridItemTest {
     }
     @Test
     public void successfullyInstantiateGridItem(){
-        assertDoesNotThrow(()->new GridItem(2,3));
+        assertDoesNotThrow(()->new GridItemChild(2,3));
     }
 
     @Test
     public void throwsExceptionOnInstantiatingWithNegativeCoordinates(){
-        assertThrows(InvalidParameterException.class, ()->new GridItem(-2,3));
-        assertThrows(InvalidParameterException.class, ()->new GridItem(12,-3));
-        assertThrows(InvalidParameterException.class, ()->new GridItem(-12,-3));
+        assertThrows(InvalidParameterException.class, ()->new GridItemChild(-2,3));
+        assertThrows(InvalidParameterException.class, ()->new GridItemChild(12,-3));
+        assertThrows(InvalidParameterException.class, ()->new GridItemChild(-12,-3));
     }
     @Test
     public void correctlyCountsNeighbours(){
@@ -55,5 +53,12 @@ public class GridItemTest {
         cells.forEach(cell->cell.publish(Event.CELL_STATE, cell));
 
         assertEquals(4, item.getNeighbourCellCount());
+
+        item.resetNeighbouringCellCount();
+        cells.add(new Cell(2,5));
+        cells.add(new Cell(2,6));
+        cells.forEach(cell->cell.publish(Event.CELL_STATE, cell));
+
+        assertEquals(5, item.getNeighbourCellCount());
     }
 }

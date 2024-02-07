@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e441090-220a-4242-8a54-136a39ee5a98" name="Changes" comment="worked on IDE warnings">
+    <list default="true" id="5e441090-220a-4242-8a54-136a39ee5a98" name="Changes" comment="Created custom exceptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/GridItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/GridItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Space.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/DeadCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/gridItemTypes/Void.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/gridItemTypes/Void.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/stubs/SubscriberStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/stubs/SubscriberStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GameRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GameRunnerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GridItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GridItemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SpaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DeadCellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GridTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/VoidTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VoidTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +52,20 @@
     "JUnit.DeadCellTest.executor": "Run",
     "JUnit.ExecutorTest.periodicallySendsEventsOnRunning.executor": "Run",
     "JUnit.GameRunnerTest.executor": "Run",
+    "JUnit.GameRunnerTest.periodicallySendsEventsOnRunning.executor": "Run",
     "JUnit.GridItemTest.correctlyCountsNeighbours.executor": "Run",
     "JUnit.GridItemTest.executor": "Run",
     "JUnit.GridTest.executor": "Run",
+    "JUnit.GridTest.successfullyInstantiateGrid.executor": "Run",
     "JUnit.GridTest.throwsExceptionOnPassingNonPositiveParameters.executor": "Run",
     "JUnit.GridTest.throwsExceptionOnPassingSeedingPercentageBeyondTheRangeOf0And1.executor": "Run",
     "JUnit.SpaceTest.dispatchesProduceEventOnReceivingUpdateStateEvent.executor": "Run",
     "JUnit.SpaceTest.executor": "Run",
+    "JUnit.VoidTest.dispatchesProduceEventOnReceivingUpdateStateEvent.executor": "Run",
+    "JUnit.VoidTest.dispatchesProduceEventWhenSurroundedBy3Cells.executor": "Run",
+    "JUnit.VoidTest.doesNotDispatchesProduceEventWhenNotSurroundedByExactly3Cells.executor": "Run",
+    "JUnit.VoidTest.executor": "Run",
+    "JUnit.VoidTest.successfullyInstantiateCell.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -69,49 +79,49 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GridItemTest.correctlyCountsNeighbours">
-    <configuration name="DeadCellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GameRunnerTest.periodicallySendsEventsOnRunning">
+    <configuration name="CellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gameOfLife2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DeadCellTest" />
+      <option name="MAIN_CLASS_NAME" value="CellTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeadCellTest.dispatchesProduceEventOnReceivingUpdateStateEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CellTest.updatesItsStateOnReceivingUpdateStateEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gameOfLife2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DeadCellTest" />
-      <option name="METHOD_NAME" value="dispatchesProduceEventOnReceivingUpdateStateEvent" />
+      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="METHOD_NAME" value="updatesItsStateOnReceivingUpdateStateEvent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameRunnerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameRunnerTest.periodicallySendsEventsOnRunning" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gameOfLife2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GameRunnerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GridItemTest.correctlyCountsNeighbours" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gameOfLife2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GridItemTest" />
-      <option name="METHOD_NAME" value="correctlyCountsNeighbours" />
+      <option name="METHOD_NAME" value="periodicallySendsEventsOnRunning" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GridTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GridItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gameOfLife2" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GridTest" />
+      <option name="MAIN_CLASS_NAME" value="GridItemTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VoidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gameOfLife2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="VoidTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GridItemTest.correctlyCountsNeighbours" />
-        <item itemvalue="JUnit.DeadCellTest.dispatchesProduceEventOnReceivingUpdateStateEvent" />
-        <item itemvalue="JUnit.DeadCellTest" />
-        <item itemvalue="JUnit.GameRunnerTest" />
-        <item itemvalue="JUnit.GridTest" />
+        <item itemvalue="JUnit.GameRunnerTest.periodicallySendsEventsOnRunning" />
+        <item itemvalue="JUnit.GridItemTest" />
+        <item itemvalue="JUnit.VoidTest" />
+        <item itemvalue="JUnit.CellTest" />
+        <item itemvalue="JUnit.CellTest.updatesItsStateOnReceivingUpdateStateEvent" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +265,31 @@
       <option name="project" value="LOCAL" />
       <updated>1706820761677</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="passed test for gridItem to see that it counts neighbouring cells correctly">
+      <option name="closed" value="true" />
+      <created>1707284246830</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1707284246830</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Created custom exceptions">
+      <option name="closed" value="true" />
+      <created>1707288739093</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1707288739093</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Created custom exceptions">
+      <option name="closed" value="true" />
+      <created>1707288752174</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1707288752174</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,7 +318,9 @@
     <MESSAGE value="created a variant of grid item called space" />
     <MESSAGE value="created enum for output representation of cells and spaces" />
     <MESSAGE value="worked on IDE warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="worked on IDE warnings" />
+    <MESSAGE value="passed test for gridItem to see that it counts neighbouring cells correctly" />
+    <MESSAGE value="Created custom exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created custom exceptions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -293,6 +329,14 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/game/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/VoidTest.java</url>
+          <line>28</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/GridTest.java</url>
@@ -305,14 +349,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/GameRunnerTest.java</url>
-          <line>8</line>
-          <properties class="GameRunnerTest">
+          <line>12</line>
+          <properties class="GameRunnerTest" method="periodicallySendsEventsOnRunning">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/game/GridItem.java</url>
+          <line>26</line>
+          <properties class="org.game.GridItem" method="checkForNeighbours">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayStoreException" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gameOfLife2$GridItemTest_correctlyCountsNeighbours.ic" NAME="GridItemTest.correctlyCountsNeighbours Coverage Results" MODIFIED="1707286892184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

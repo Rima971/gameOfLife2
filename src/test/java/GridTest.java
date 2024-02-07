@@ -20,13 +20,13 @@ public class GridTest {
         assertThrows(GridNonPositiveParameters.class, ()->new Grid(-16, -20, 0.1));
         assertThrows(GridNonPositiveParameters.class, ()->new Grid(0, 0, 0.1));
         assertThrows(GridNonPositiveParameters.class, ()->new Grid(1, 2, -0.7));
+        assertThrows(GridNonPositiveParameters.class, ()->new Grid(2, 3, 0));
     }
 
     @Test
     public void throwsExceptionOnPassingSeedingPercentageBeyondTheRangeOf0And1(){
-        assertThrows(GridOutOfRangeSeedingPercentage.class, ()->new Grid(2, 3, 0));
         assertThrows(GridOutOfRangeSeedingPercentage.class, ()->new Grid(12, 23, 1));
-        assertThrows(GridOutOfRangeSeedingPercentage.class, ()->new Grid(0, 0, 0.1));
+        assertThrows(GridOutOfRangeSeedingPercentage.class, ()->new Grid(1, 1, 11));
     }
 
     @Test

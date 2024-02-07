@@ -20,7 +20,7 @@ public class Grid implements ISubscriber {
         this.rows = rows;
         this.columns = columns;
         this.initiallyRequiredCellsCount = (int) Math.round(seedingPercentage * rows * columns);
-        this.grid = new Cell[rows][columns];
+        this.grid = new GridItem[rows][columns];
         this.initialize();
     }
 

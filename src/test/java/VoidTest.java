@@ -13,25 +13,33 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class VoidTest {
-    private final PublisherStub publisherStub = new PublisherStub();
-    private final SubscriberStub subscriberStub = new SubscriberStub();
     @Test
     public void successfullyInstantiateCell(){
         assertDoesNotThrow(()->new Void(2,3));
     }
 
     @Test
-    public void dispatchesProduceEventOnReceivingUpdateStateEvent(){
+    public void dispatchesProduceEventWhenSurroundedBy3Cells(){
         List<Cell> cells = new ArrayList<>();
         cells.add(new Cell(2,4));
         cells.add(new Cell(4,4));
         cells.add(new Cell(4,5));
         Void aVoid = spy(new Void(3,4));
 
-        cells.forEach(cell -> cell.publish(Event.CELL_STATE, cell));
-        publisherStub.publish(Event.UPDATE_STATE, null);
-        verify(aVoid).publish(Event.CELL_PRODUCE, "3 4");
-        assertEquals(subscriberStub.event,Event.CELL_PRODUCE);
-        assertEquals(subscriberStub.payload, "3 4");
+        cells.forEach(cell -> aVoid.onEvent(Event.CELL_STATE, cell));
+        aVoid.onEvent(Event.UPDATE_STATE, null);
+        verify(aVoid, times(1)).publish(Event.CELL_PRODUCE, "3 4");
+    }
+    @Test
+    public void doesNotDispatchesProduceEventWhenNotSurroundedByExactly3Cells(){
+        List<Cell> cells = new ArrayList<>();
+        cells.add(new Cell(2,4));
+        cells.add(new Cell(4,8)); // not neighbour
+        cells.add(new Cell(4,5));
+        Void aVoid = spy(new Void(3,4));
+
+        cells.forEach(cell -> aVoid.onEvent(Event.CELL_STATE, cell));
+        aVoid.onEvent(Event.UPDATE_STATE, null);
+        verify(aVoid, never()).publish(Event.CELL_PRODUCE, "3 4");
     }
 }

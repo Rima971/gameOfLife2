@@ -6,7 +6,7 @@ import org.game.interfaces.ISubscriber;
 
 import java.security.InvalidParameterException;
 
-public class GridItem implements IPublisher, ISubscriber {
+abstract public class GridItem implements IPublisher, ISubscriber {
     private final int row, column;
     private int surroundingCellsCount = 0;
     public GridItem(int row, int column){
@@ -19,7 +19,9 @@ public class GridItem implements IPublisher, ISubscriber {
     @Override
     public void onEvent(Event event, Object o) {
         if (!(o instanceof GridItem)) return;
-        this.checkForNeighbours((GridItem) o);
+        switch (event){
+            case Event.CELL_STATE -> this.checkForNeighbours((GridItem) o);
+        }
     }
 
     private void checkForNeighbours(GridItem item){
