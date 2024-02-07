@@ -1,15 +1,12 @@
 import org.game.gridItemTypes.Cell;
 import org.game.gridItemTypes.Void;
 import org.game.enums.Event;
-import org.game.stubs.PublisherStub;
-import org.game.stubs.SubscriberStub;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class VoidTest {

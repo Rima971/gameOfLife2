@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class GridItemTest {
-    private final class GridItemChild extends GridItem {
+    private static final class GridItemChild extends GridItem {
         public GridItemChild(int row, int column){
             super(row, column);
         }
@@ -26,14 +26,14 @@ public class GridItemTest {
     }
     @Test
     public void successfullyInstantiateGridItem(){
-        assertDoesNotThrow(()->new GridItemChild(2,3));
+        assertDoesNotThrow(()-> new GridItemChild(2, 3));
     }
 
     @Test
     public void throwsExceptionOnInstantiatingWithNegativeCoordinates(){
-        assertThrows(InvalidParameterException.class, ()->new GridItemChild(-2,3));
-        assertThrows(InvalidParameterException.class, ()->new GridItemChild(12,-3));
-        assertThrows(InvalidParameterException.class, ()->new GridItemChild(-12,-3));
+        assertThrows(InvalidParameterException.class, ()-> new GridItemChild(-2, 3));
+        assertThrows(InvalidParameterException.class, ()-> new GridItemChild(12, -3));
+        assertThrows(InvalidParameterException.class, ()-> new GridItemChild(-12, -3));
     }
     @Test
     public void correctlyCountsNeighbours(){
@@ -41,7 +41,7 @@ public class GridItemTest {
         cells.add(new Cell(2,4));
         cells.add(new Cell(4,4));
         cells.add(new Cell(1,4));
-        GridItemChild item = new GridItemChild(3,4);
+        GridItemChild item = new GridItemChild(3, 4);
         cells.forEach(cell->cell.publish(Event.CELL_STATE, cell));
 
         assertEquals(2, item.getNeighbourCellCount());

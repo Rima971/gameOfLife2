@@ -1,7 +1,5 @@
 import org.game.gridItemTypes.Cell;
 import org.game.enums.Event;
-import org.game.stubs.PublisherStub;
-import org.game.stubs.SubscriberStub;
 import org.junit.Test;
 
 

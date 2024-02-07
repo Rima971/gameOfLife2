@@ -7,10 +7,14 @@ import org.game.gridItemTypes.Cell;
 import org.game.gridItemTypes.Void;
 import org.game.interfaces.ISubscriber;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Grid implements ISubscriber {
     private final int rows, columns, initiallyRequiredCellsCount;
     public int cellsCount = 0;
     private final GridItem[][] grid;
+    private final List<Thread> threads = new ArrayList<>();
 
     public Grid(int rows, int columns, double seedingPercentage) {
         if (rows <= 0 || columns <= 0 || seedingPercentage <= 0)
@@ -33,6 +37,7 @@ public class Grid implements ISubscriber {
         }
         this.populateCellsRandomly();
         this.subscribe(Event.CELL_DESTROY, this);
+        this.subscribe(Event.CELL_PRODUCE, this);
     }
 
     private void populateCellsRandomly() {
@@ -55,6 +60,10 @@ public class Grid implements ISubscriber {
         return (int) Math.floor(Math.random() * this.columns);
     }
 
+    public void implementThreads(){
+        threads.forEach(Thread::run);
+    }
+
     @Override
     public void onEvent(Event event, Object o) {
         if (o.getClass() != String.class) return;
@@ -63,11 +72,16 @@ public class Grid implements ISubscriber {
         int column = Integer.parseInt(coordinates[1]);
         switch (event) {
             case Event.CELL_DESTROY:
-                this.grid[row][column] = new Void(row, column);
-                this.cellsCount--;
+                threads.add(new Thread(()->{
+                    this.grid[row][column] = new Void(row, column);
+                    this.cellsCount--;
+                }));
             case Event.CELL_PRODUCE:
-                this.grid[row][column] = new Cell(row, column);
-                this.cellsCount++;
+                threads.add(new Thread(()->{
+                    this.grid[row][column] = new Cell(row, column);
+                    this.cellsCount++;
+                }));
+
         }
 
     }
