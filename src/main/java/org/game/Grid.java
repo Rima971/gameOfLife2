@@ -10,11 +10,13 @@ import org.game.interfaces.ISubscriber;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 public class Grid implements ISubscriber {
     private final int rows, columns, initiallyRequiredCellsCount;
     public int cellsCount = 0;
     private final GridItem[][] grid;
-    private final List<Thread> threads = new ArrayList<>();
+    private final List<Runnable> threads = new ArrayList<>();
 
     public Grid(int rows, int columns, double seedingPercentage) {
         if (rows <= 0 || columns <= 0 || seedingPercentage <= 0)
@@ -61,7 +63,7 @@ public class Grid implements ISubscriber {
     }
 
     public void implementThreads(){
-        threads.forEach(Thread::run);
+        threads.forEach(thread->thread.run());
     }
 
     @Override

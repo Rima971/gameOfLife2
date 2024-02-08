@@ -16,8 +16,8 @@ public class Simulation implements IPublisher {
             sleep(500);
             this.publish(Event.UPDATE_STATE, null);
             sleep(500);
-            grid.implementThreads();
-            sleep(500);
+//            grid.implementThreads();
+//            sleep(500);
             io.printLine(grid.toString());
         }
 

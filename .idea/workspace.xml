@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e441090-220a-4242-8a54-136a39ee5a98" name="Changes" comment="Made tests pass to check whether a void correctly updates its location and whether a gridItem correctly counts neighboring cells">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/IO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/EventBusTest.java" afterDir="false" />
+    <list default="true" id="5e441090-220a-4242-8a54-136a39ee5a98" name="Changes" comment="test simulation periodically sends events, added IO for the simulation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/GameRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Simulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/stubs/PublisherStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/stubs/SubscriberStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SimulationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GridItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GridItemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/VoidTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VoidTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Simulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707300938563</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="test simulation periodically sends events, added IO for the simulation">
+      <option name="closed" value="true" />
+      <created>1707333769218</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1707333769218</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -340,7 +339,8 @@
     <MESSAGE value="passed test for gridItem to see that it counts neighbouring cells correctly" />
     <MESSAGE value="Created custom exceptions" />
     <MESSAGE value="Made tests pass to check whether a void correctly updates its location and whether a gridItem correctly counts neighboring cells" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made tests pass to check whether a void correctly updates its location and whether a gridItem correctly counts neighboring cells" />
+    <MESSAGE value="test simulation periodically sends events, added IO for the simulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="test simulation periodically sends events, added IO for the simulation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
